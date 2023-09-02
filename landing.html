@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<input type="text" id="searchBar" placeholder="Enter an address or landmark" />
+<button onclick="search()">Search</button>
+
+<script>
+  function search() {
+    // Get the value of the search bar and search for it using your preferred API or method
+    const searchValue = document.getElementById('searchBar').value;
+    // ...
+  }
+</script>
+
+
+
+<input type="text" id="searchBar" placeholder="Enter an address or landmark" />
+<button onclick="search()">Search</button>
+
+<div id="autocompleteResults"></div>
+
+<script>
+  const searchInput = document.getElementById('searchBar');
+  const autocompleteResults = document.getElementById('autocompleteResults');
+  
+  searchInput.addEventListener('input', function() {
+    // Fetch and display autocomplete suggestions based on the user's input
+    const searchValue = searchInput.value;
+    // Use your preferred API or method to get autocomplete suggestions based on the searchValue
+    const suggestions = ['suggestion 1', 'suggestion 2', 'suggestion 3'];
+    autocompleteResults.innerHTML = '';
+    for (let i = 0; i < suggestions.length; i++) {
+      const suggestion = suggestions[i];
+      const suggestionDiv = document.createElement('div');
+      suggestionDiv.innerHTML = suggestion;
+      suggestionDiv.addEventListener('click', function() {
+        searchInput.value = suggestion;
+        // Perform the search based on the selected suggestion
+        search();
+      });
+      autocompleteResults.appendChild(suggestionDiv);
+    }
+  });
+</script>
+
+
+
+
+<input type="text" id="searchBar" placeholder="Enter an address or landmark" />
+<button onclick="search()">Search</button>
+
+<div id="map"></div>
+
+<script>
+  function initMap() {
+    // Load and display the map on the page using the Google Maps API
+    const mapDiv = document.getElementById('map');
+    const map = new google.maps.Map(mapDiv, { center: { lat: 0, lng: 0 }, zoom: 1 });
+    // ...
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" defer></script>
+
+
+
+<input type="text" id="searchBar" placeholder="Enter an address or landmark" />
+<button onclick="search()">Search</button>
+
+<div id="map"></div>
+
+<button onclick="getCurrentLocation()">Get Current Location</button>
+
+<script>
+  function initMap() {
+    // Load and display the map on the page using the Google Maps API
+    const mapDiv = document.getElementById('map');
+    const map = new google.maps.Map(mapDiv, { center: { lat: 0, lng: 0 }, zoom: 1 });
+    // ...
+  }
+
+  function getCurrentLocation() {
+    if (navigator.geolocation) {
+      // Use Geolocation API to get the user's current location
+      navigator.geolocation.getCurrentPosition(function(position) {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        // Display the user's current location on the map using the Google Maps API
+        const mapDiv = document.getElementById('map');
+        const map = new google.maps.Map(mapDiv, { center: { lat: lat, lng: lng }, zoom: 15 });
+        const marker = new google.maps.Marker({ position: { lat: lat, lng: lng }, map: map });
+      }, function() {
+        alert('Error: The Geolocation service failed.');
+      });
+    } else {
+      alert('Error: Your browser doesn\'t support Geolocation.');
+    }
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" defer></script>

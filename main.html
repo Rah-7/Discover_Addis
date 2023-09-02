@@ -1,0 +1,35 @@
+1. Search Bar:
+
+<input type="text" id="searchBar" placeholder="Enter an address or landmark" />
+<button onclick="search()">Search</button>
+
+
+2. Autocomplete Suggestions:
+
+<script>
+  const searchInput = document.getElementById('searchBar');
+  searchInput.addEventListener('input', function() {
+    // Fetch and display autocomplete suggestions based on the user's input
+    // ...
+  });
+</script>
+
+
+3. Map Display:
+
+<div id="map"></div>
+<script>
+  // Load and display the map on the page
+  // ...
+</script>
+
+
+4. Geolocation Button:
+
+<button onclick="getCurrentLocation()">Get Current Location</button>
+<script>
+  function getCurrentLocation() {
+    // Use Geolocation API to get the user's current location
+    // ...
+  }
+</script>

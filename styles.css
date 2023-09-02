@@ -1,0 +1,37 @@
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+}
+
+form, input, button {
+  display: block;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+form {
+  width: 60%;
+}
+
+input[type=text] {
+  width: 95%;
+  padding: 5px 10px;
+  margin-right: -5px;
+}
+
+button {
+  width: 80px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+}
+
+button:hover {
+  background-color: #0062cc;
+}
